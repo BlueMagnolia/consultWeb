@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Prompt:400,500&display=swap');
+.bg {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.textboxHome {
+    /* Box */
+    height: 10rem;
+    width: 25rem;
+    position: absolute;
+    left: 35%;
+    top: 40%;
+    /* bg */
+    background-color: #273773;
+    opacity: 0.5;
+    filter: Alpha(opacity=55); 
+    z-index: 1;
+}
+.textHome1 {
+    /* box */
+    height: 10rem;
+    width: 25rem;
+    position: absolute;
+    left: 35%;
+    top: 48%;
+    z-index: 2;
+    /* font */
+    color: #ffffff;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+}
+.textHome2 {
+    /* box */
+    height: 10rem;
+    width: 25rem;
+    position: absolute;
+    left: 35%;
+    top: 50%;
+    z-index: 2;
+    /* font */
+    color: #ffffff;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+}
+.textHome3 {
+    /* box */
+    height: 10rem;
+    width: 25rem;
+    position: absolute;
+    left: 35%;
+    top: 50%;
+    z-index: 2;
+    /* font */
+    color: #ffffff;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+}

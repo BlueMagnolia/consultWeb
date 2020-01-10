@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css?family=Prompt:300,400,500&display=swap');
+/* -------------------========== QUOTE CONSULT BOX =================-------------------------- */
+.noteConsult {
+    width: fit-content;
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+}
+.boxNoteConsultOuter1 {
+    /* BOX */
+    width: 35vw;
+    height: 500px;
+    background-color:  #E3F6EF;
+    overflow: hidden;
+    border-radius: 10px;
+}
+// --------------------==== BOKEH SCSS ====-------------------
+$bokehCount: 20;
+$bokehBaseSize: 3rem;
+$bokehBaseOpacity: 0;
+$bokehBaseBrightness: 100;
+$bokehBaseDuration: 16s;
+$colorSet: (
+  #8BD8BD,
+  #224B8E,
+  #224B8E,
+  #D6E4DF
+);
+#bokeh  {
+  border-radius: 50%;
+  animation-name: bokeh;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  @for $i from 1 through $bokehCount {
+    &:nth-child(#{$i}) {
+      $randomizedSize: random() + $bokehBaseSize;
+      width: $randomizedSize;
+      height: $randomizedSize;
+      top: random(100) * 1%;
+      left: random(100) * 1%;
+      color: nth($colorSet, random(length($colorSet)));
+      // opacity: $bokehBaseOpacity + random(4) * 0.15;
+      box-shadow: ($randomizedSize + 5rem) 0 (0.2rem + random()*0.5rem) currentColor;
+      // filter: brightness($bokehBaseBrightness + random(150)*1%);
+      transform-origin:  (random(40)-20) * 1rem (random(40)-20) * 1rem;
+      animation-duration: $bokehBaseDuration + random(30) * 1s;
+    }
+  }
+}
+@keyframes bokeh {
+  100% {transform: rotate(360deg); }
+}
+// -----------------------------------------------------------
+.boxNoteConsultOuter2 {
+    position: relative;
+    margin: 0 auto;
+    /* BOX */
+    width: 400px;
+    height: 120px;
+    bottom: 60vh;
+}
+.textNoteConsult1 {
+    margin: 0;
+    text-align: left;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 500;
+    font-size: 50px;
+}
+.textNoteConsult2 {
+    text-align: center;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+.textNoteConsult3 {
+    margin: 0;
+    text-align: right;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 500;
+    font-size: 50px;
+}
+
+/* -----------------================= LIST CONSULT BOX ==============-------------------- */
+.listBoxConsult {
+    width: fit-content;
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.listConsultHead  {
+    width: 450px;
+    height: 400px;
+    list-style-type: none;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* CONSULT NAME BOX */
+.avatar {
+    height: 70px;
+    width: 70px;
+    background-color: #34558B;
+    border-radius: 50%;
+    display: inline-block;
+}
+.consultNameBox {
+    /* TEXT */
+    display: flex;
+    align-items: center;
+    width: 400px;
+    height: 80px;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    /* BUTTON */
+    background-color: #ffffff; 
+    border: 2px solid #ffffff;
+}
+.consultNameBox:hover {
+    background-color: #DCF3EB; 
+    border: 2px solid #DCF3EB;
+}
+.consultNameBox:focus {
+    background-color: #DCF3EB; 
+    border: 2px solid #DCF3EB;
+}
+
+/* SCROLL INSIDE CONSULT BOX NAME */
+#styleScroll::-webkit-scrollbar-track
+{
+    background-color: #34558B;
+    border-radius: 20px;
+}
+#styleScroll::-webkit-scrollbar
+{
+	width: 4px;
+    background-color: #34558B;
+    border-radius: 20px
+}
+
+#styleScroll::-webkit-scrollbar-thumb
+{
+	background-color: #8BD8BD;
+    border: 1px solid #8BD8BD;
+    border-radius: 20px;
+}
+
+/* BOTTON FOR APPLY */
+.btn-grad1 {
+    /* TEXT */
+    color: #ffffff;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    /* BOX */
+    width: 300px;
+    height: 50px;
+    border-radius: 15px;
+    background-image: linear-gradient( #34558B 0%, #34558B 51%, #191F2F 100%)
+}
+.btn-grad1:hover { 
+    background-position: bottom center; 
+}

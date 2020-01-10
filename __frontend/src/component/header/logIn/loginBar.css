@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Prompt:500&display=swap');
+.head {
+    display: flex;
+    flex-direction: row;
+}
+.logoHead {
+    font-family: 'Prompt', sans-serif;
+    font-size: 36px;
+    color: #34558B;
+}
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+a {
+    font-family: 'Prompt', sans-serif;
+    color: #273773;
+    font-size: 18px;
+    padding: 15px;
+    
+}
+.appoint {
+    color: #FFFFFF;
+    background-color: #273773;
+    
+}

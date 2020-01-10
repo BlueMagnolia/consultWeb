@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css?family=Prompt:300,400,500&display=swap');
+// --------==== BOKEH Background ====-------
+.bgSignIn {
+    width: 1250px;
+    height: 950px;
+    overflow: hidden;
+}
+
+$bokehCount: 20;
+$bokehBaseSize: 3rem;
+$bokehBaseOpacity: 0;
+$bokehBaseBrightness: 100;
+$bokehBaseDuration: 16s;
+$colorSet: (
+  #8BD8BD,
+  #224B8E,
+  #224B8E,
+  #D6E4DF
+);
+#bokeh  {
+  border-radius: 50%;
+  animation-name: bokeh;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  @for $i from 1 through $bokehCount {
+    &:nth-child(#{$i}) {
+      $randomizedSize: random() + $bokehBaseSize;
+      width: $randomizedSize;
+      height: $randomizedSize;
+      top: random(100) * 1%;
+      left: random(100) * 1%;
+      color: nth($colorSet, random(length($colorSet)));
+      // opacity: $bokehBaseOpacity + random(4) * 0.15;
+      box-shadow: ($randomizedSize + 5rem) 0 (0.2rem + random()*0.5rem) currentColor;
+      // filter: brightness($bokehBaseBrightness + random(150)*1%);
+      transform-origin:  (random(40)-20) * 1rem (random(40)-20) * 1rem;
+      animation-duration: $bokehBaseDuration + random(30) * 1s;
+    }
+  }
+}
+@keyframes bokeh {
+  100% {transform: rotate(360deg); }
+}
+// -----------------------------------------
+.containerForm {
+    position: absolute;
+    // z-index: 1;
+    left: 3%;
+    top: 20%;
+    width: 1200px;
+    height: 870px;
+    border: 1px solid #34558B;
+    background-color: #fff;
+    // margin-bottom: 50%;
+    border-radius: 5px;
+    // position: absolute;
+    // left: 50%;
+    // top: 50%;
+}
+.signInHead {
+    color: #000000;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+.profile {
+    color: #000000;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+// --------------------==== PART | SUCCESS ====--------------------
+.titleHead {
+    color: #000000;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 500;
+    font-size: 48px;
+}
+.subTitleHead {
+    color: #000000;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+}
+.successText {
+  text-align: center;
+  padding: 10%;
+  margin-top: 10%;
+}
+// ================================================================
+.shadowBox {
+    margin: 10px;
+    padding: 10px 10px;
+    width: 400px;
+    // ----==== SHADOW ====----
+    border: none;
+    border-radius: 2px;
+	  box-shadow:
+                0 1px 1px rgba(0, 0, 0, 0.034),
+                0 1px 1px rgba(0, 0, 0, 0.048),
+                0 1px 1px rgba(0, 0, 0, 0.06),
+                0 1px 10px rgba(0, 0, 0, 0.072),
+                0 1px 5px rgba(0, 0, 0, 0.086),
+                0 1px 4px rgba(0, 0, 0, 0.12)
+    ;
+}
+#sectionLine {
+    border-right: 2px solid;
+    border-image: 
+    linear-gradient(
+      to bottom, 
+      #34558B,
+      #8BD8BD
+    ) 1 100%;
+}
+
+/* BOTTON FOR APPLY */
+.centerButton {
+  text-align: center;
+}
+.btn-grad2 {
+    /* TEXT */
+    color: #ffffff;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    /* BOX */
+    width: 170px;
+    height: 50px;
+    border-radius: 15px;
+    background-image: linear-gradient( #34558B 0%, #34558B 51%, #8BD8BD 100%)
+}
+.btn-grad1:hover { 
+    background-position: bottom center; 
+}
+
+// --------------------==== CLOSE ====-----------------------
+.closeSignIn {
+    border: none;
+    background-color: #fff;
+}

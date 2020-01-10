@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css?family=Prompt:300,400,500&display=swap');   
+.boxBg {
+    width: 600px;
+    height: 500px;
+}
+.familyImg {
+  padding-bottom: 4%;
+  z-index: 1;
+}
+.boxImageFamily {
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+}
+// --------------------==== BOKEH SCSS ====-------------------
+$bokehCount: 20;
+$bokehBaseSize: 1rem;
+$bokehBaseOpacity: 0;
+$bokehBaseBrightness: 100;
+$bokehBaseDuration: 8s;
+$colorSet: (
+  #8BD8BD,
+//   #224B8E,
+  #224B8E,
+  #D6E4DF
+);
+#bokeh  {
+  border-radius: 50%;
+  animation-name: bokeh;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  @for $i from 1 through $bokehCount {
+    &:nth-child(#{$i}) {
+      $randomizedSize: random() + $bokehBaseSize;
+      width: $randomizedSize;
+      height: $randomizedSize;
+      top: random(100) * 1%;
+      left: random(100) * 1%;
+      color: nth($colorSet, random(length($colorSet)));
+    //   opacity: $bokehBaseOpacity + random(4) * 0.15;
+      box-shadow: ($randomizedSize + 5rem) 0 (0.2rem + random()*0.5rem) currentColor;
+    //   filter: brightness($bokehBaseBrightness + random(150)*1%);
+      transform-origin:  (random(40)-20) * 1rem (random(40)-20) * 1rem;
+      animation-duration: $bokehBaseDuration + random(30) * 1s;
+    }
+  }
+}
+@keyframes bokeh {
+  100% {transform: rotate(360deg); }
+}
+// -------------==== TAB LOGIN ====----------------
+/* OUTER BOX */
+.tab-wrap {
+	border-radius: 6px;
+  max-width: 100%;
+  max-height: auto;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	  -ms-flex-wrap: wrap;
+		  flex-wrap: wrap;
+	position: relative;
+	list-style: none;
+  background-color: #fff;
+	margin: 40px 0;
+  border-bottom: 1px solid #34558B;
+}
+/* ADD SHADOW OUTER BOX */
+.tab-wrap:hover {
+	box-shadow: 0 12px 23px rgba(0, 0, 0, 0.23), 0 10px 10px rgba(0, 0, 0, 0.19);
+}
+/* REMOVE RADIO MENU */
+.tab {
+	display: none;
+}
+/* WHEN SELECT EACH RADIO */
+.tab:checked:nth-of-type(1) ~ .tab__content:nth-of-type(1) {
+	opacity: 1;
+	-webkit-transition: 0.5s opacity ease-in, 0.2s transform ease;
+	transition: 0.5s opacity ease-in, 0.2s transform ease;
+	position: relative;
+	top: 0;
+	z-index: 100;
+	-webkit-transform: translateY(0px);
+		  transform: translateY(0px);
+	text-shadow: 0 0 0;
+}
+.tab:checked:nth-of-type(2) ~ .tab__content:nth-of-type(2) {
+	opacity: 1;
+	-webkit-transition: 0.5s opacity ease-in, 0.2s transform ease;
+	transition: 0.5s opacity ease-in, 0.2s transform ease;
+	position: relative;
+	top: 0;
+	z-index: 100;
+	-webkit-transform: translateY(0px);
+		  transform: translateY(0px);
+	text-shadow: 0 0 0;
+}
+/* UNKNOWN */
+.tab:first-of-type:not(:last-of-type) + label {
+	border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  
+}
+.tab:not(:first-of-type):not(:last-of-type) + label {
+  border-radius: 0;
+  
+}
+.tab:last-of-type:not(:first-of-type) + label {
+	border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  
+}
+/*  */
+.tab:checked + label {
+	background-color: #fff;
+  // color: #34558B;
+  color: #8BD8BD;
+  cursor: default;
+}
+// .tab:checked + label:hover {
+// 	box-shadow: 0 -1px 0 #fff inset;
+// 	background-color: #fff;
+// }
+/* ADD CSS IN RADIO */
+.tab + label {
+  background-color: #8BD8BD;
+	width:100%;	  
+	// box-shadow: 0 -1px 0 #eee inset;
+  border-radius: 6px 6px 0 0;
+	display: block;
+	text-decoration: none;
+	color: #fff;
+	-webkit-box-flex: 3;
+	-webkit-flex-grow: 3;
+	  -ms-flex-positive: 3;
+		  flex-grow: 3;
+  text-align: center;
+  // COLOR SELECTED TAB
+    border-top: 1px solid #8BD8BD;
+	// background-color: #f2f2f2;
+	-webkit-user-select: none;
+	 -moz-user-select: none;
+	  -ms-user-select: none;
+		  user-select: none;
+	text-align: center;
+	// -webkit-transition: 0.3s background-color ease, 0.3s box-shadow ease;
+	// transition: 0.3s background-color ease, 0.3s box-shadow ease;
+	height: 50px;
+	box-sizing: border-box;
+	padding: 15px;
+}
+/* UNKNOWN */
+// .tab + label:hover {
+// 	background-color: #f9f9f9;
+// 	box-shadow: 0 1px 0 #f4f4f4 inset;
+// }
+/* HIDE UNSELECTED RADIO */
+.tab__content {
+	padding: 10px 25px;
+	background-color: transparent;
+	position: absolute;
+	width: 100%;
+	z-index: -1;
+	opacity: 0;
+	left: 0;
+	-webkit-transform: translateY(-3px);
+		  transform: translateY(-3px);
+  border-radius: 6px;
+}
+
+/* BORDER */
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.container {
+  max-width: auto;
+  height: auto;
+  margin: 10px;
+  border-radius: 6px;
+  padding: 0px 1px 0px 1px;
+  background: linear-gradient(to top,#34558B, #8BD8BD);
+}
+
+@media (min-width:450px) {
+		
+	.tab + label {
+		width:auto;
+	}
+}
+// -----------=== TEXT INSIDE LOGIN BOX ===------------
+.headMenu {
+  text-align: center;
+  font-family: 'Prompt', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+  //  color: #fff; 
+    // background: -webkit-linear-gradient(#34558B, #8BD8BD);
+    // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
+}
+.subHeadMenu {
+  text-align: center;
+  font-family: 'Prompt', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+.lineBreak {
+  width: 300px;
+  border: 1px solid #8BD8BD;
+}
+// -----------===== FORM =====--------------
+.shadowBox {
+    margin: 10px;
+    padding: 10px 10px;
+    width: 450px;
+    // ----==== SHADOW ====----
+    border: none;
+    border-radius: 2px;
+	  box-shadow:
+                0 1px 1px rgba(0, 0, 0, 0.034),
+                0 1px 1px rgba(0, 0, 0, 0.048),
+                0 1px 1px rgba(0, 0, 0, 0.06),
+                0 1px 10px rgba(0, 0, 0, 0.072),
+                0 1px 5px rgba(0, 0, 0, 0.086),
+                0 1px 4px rgba(0, 0, 0, 0.12)
+    ;
+}
+#textInput {
+  font-family: 'Prompt', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+.centerButton {
+  text-align: center;
+}
+.btn-grad2 {
+    /* TEXT */
+    color: #ffffff;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    /* BOX */
+    width: 170px;
+    height: 50px;
+    border-radius: 15px;
+    background-image: linear-gradient( #34558B 0%, #34558B 51%, #8BD8BD 100%)
+}
+.btn-grad1:hover { 
+    background-position: bottom center; 
+}

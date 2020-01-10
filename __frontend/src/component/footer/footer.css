@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Prompt:300,400,500&display=swap');
+.footer {
+    background-color: #243564;
+    padding-bottom: 20px;
+}
+.textHeadFooter {
+    color: #ffffff;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+}
+.logoFooter {
+    display: flex;
+    justify-content: space-between;
+}
+.additionFooter {
+    text-align: right;
+}

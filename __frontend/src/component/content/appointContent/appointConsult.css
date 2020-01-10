@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Prompt:300,400,500&display=swap');
+.tableSelectTime {
+    text-align: center !important;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    /* color: #34558B !important; */
+}
+.boxDate {
+    color: #34558B;
+    padding: 20px;;
+    border: 1px solid #34558B;
+    border-radius: 5px;
+}
+.tagDateTime {
+    font-family: 'Prompt', sans-serif;
+    color: #34558B !important;
+    /* font-weight: 400; */
+    /* font-size: 16px; */
+}
+.line {
+    border: 0.5px solid #34558B;
+}
+.btn-Save {
+    font-family: 'Prompt', sans-serif;
+    font-weight: 200;
+    font-size: 16px;
+}
+.btn-Save,.btn-Save:focus {
+    color: #ffffff;
+    background-color: #34558B !important;
+    border-color: #34558B;
+}
+.btn-Save:hover {
+    color: #34558B;
+    background-color: #ffffff !important;
+    border-color: #34558B;
+}
