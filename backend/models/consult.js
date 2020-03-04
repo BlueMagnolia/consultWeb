@@ -44,7 +44,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "consult_id",
       });
       consult.belongsToMany(models.patient, {
-          as: "consultant",
+          as: "consult",
           foreignKey: "consult_id",
           through: models.reserve
         });

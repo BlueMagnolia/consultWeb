@@ -31,7 +31,7 @@ app.use(morgan("dev"));
 // import config of passport
 require("./config/passport/passport");
 
-db.sequelize.sync({ force: false }).then(() => {
+db.sequelize.sync({ force: false, alter: false }).then(() => {
   consultService(app, db);
   patientService(app, db);
   appointmentConsultService(app,db);

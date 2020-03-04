@@ -87,10 +87,9 @@ export class AppointContent extends Component {
           
             axios
               .post("http://localhost:8080/reserveTime", {
-                patient_id: 1,
-                consult_id: this.state.appoint_id[0],
-                // appointmentCousult_id: 2,
-                time: reserveTime
+                consult_id: this.state.listConsult,
+                time: reserveTime,
+                date: this.state.dateStr
               })
               .then(res => {
                 console.log("send");
